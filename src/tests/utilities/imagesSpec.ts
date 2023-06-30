@@ -12,10 +12,10 @@ describe('functions testing the operations using images', () => {
       `../../../assets/thumb/${imageOutName}`
     );
 
-    beforeAll(() => {
+    beforeAll(async () => {
       try {
         if (fs.existsSync(imagePath)) {
-          resizeImage(imageName, 100, 100);
+          await resizeImage(imageName, 100, 100);
         }
       } catch (err) {
         console.error('Error occurred during Sharp image resize step...');
