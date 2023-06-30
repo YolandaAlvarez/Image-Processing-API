@@ -19,7 +19,7 @@ images.get('/', async (req: Request, res: Response) => {
     `../../../assets/thumb/${imageName[0]}_${width}_${height}.jpg`
   );
 
-  if (isNaN(width) || isNaN(height)) {
+  if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
     res.status(400).send('Error in height or width!');
   } else {
     if (fs.existsSync(inputImage)) {
